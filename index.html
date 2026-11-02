@@ -8,17 +8,17 @@
 <script defer src="./app.js"></script>
 </head>
 <body>
-<header class="topbar"><div class="brand-mark">SE</div><div><h1>Skladová evidence</h1><p>TISK PRO ZÁPIS · 49 položek</p></div><div class="spacer"></div><span id="syncBadge" class="badge neutral">Nepřipojeno</span></header>
+<header class="topbar"><div class="brand-mark">SE</div><div><h1>Skladová evidence</h1><p>TISK PRO ZÁPIS · 49 položek</p></div><div class="spacer"></div><span id="syncBadge" class="badge neutral">Nový formulář</span></header>
 <main>
 <section class="toolbar panel">
- <button id="loadBtn" class="secondary">Načíst z databáze</button>
+ <button id="loadBtn" class="secondary">Stáhnout poslední počty</button>
 </section>
 <section class="toolbar panel actions">
  <label class="search">Vyhledat položku<input id="search" type="search" placeholder="Název nebo číslo reference…"></label>
- <div class="spacer"></div><button id="exportBtn" class="primary" disabled>Exportovat do DB</button><button id="xlsxBtn" class="secondary" disabled>Stáhnout XLSX</button>
+ <div class="spacer"></div><button id="exportBtn" class="primary">Exportovat do DB</button><button id="xlsxBtn" class="secondary">Stáhnout XLSX</button>
 </section>
-<section class="meta"><span id="countLabel">0 / 49 vyplněno</span><span id="statusText">Aplikace načítá uložená data z databáze.</span></section>
-<div class="table-wrap panel"><table><thead><tr><th>Název</th><th>Průměr</th><th>Číslo ref.</th><th>Počet ks</th></tr></thead><tbody id="rows"><tr><td colspan="4" class="empty">Načítání aplikace…</td></tr></tbody></table></div>
-<footer>Data se do databáze zapisují pouze po stisknutí tlačítka <b>Exportovat do DB</b>.</footer>
+<section class="meta"><span id="countLabel">0 / 49 vyplněno</span><span id="statusText">Nový prázdný formulář. Poslední uložené počty načteš tlačítkem „Stáhnout poslední počty“.</span></section>
+<div class="table-wrap panel"><table><thead><tr><th>Název</th><th>Průměr</th><th>Číslo ref.</th><th>Počet ks</th></tr></thead><tbody id="rows"><tr><td colspan="4" class="empty">Připravuji prázdný formulář…</td></tr></tbody></table></div>
+<footer>Každé otevření začíná prázdným formulářem. Uložené počty se načtou pouze po stisknutí tlačítka <b>Stáhnout poslední počty</b>. Do databáze se zapisuje pouze po stisknutí tlačítka <b>Exportovat do DB</b>.</footer>
 </main><div id="toast" role="status" aria-live="polite"></div>
 </body></html>
