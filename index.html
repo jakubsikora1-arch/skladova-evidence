@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#1f6b3a"><title>Skladová evidence</title>
+<link rel="stylesheet" href="./styles.css">
+<script defer src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+<script defer src="./app.js"></script>
+</head>
+<body>
+<header class="topbar"><div class="brand-mark">SE</div><div><h1>Skladová evidence</h1><p>TISK PRO ZÁPIS · 49 položek</p></div><div class="spacer"></div><span id="syncBadge" class="badge neutral">Nepřipojeno</span></header>
+<main>
+<section class="toolbar panel">
+ <label class="key-label">Přístupový klíč<input id="accessKey" type="password" autocomplete="current-password" placeholder="Zadej přístupový klíč"></label>
+ <button id="connectBtn" class="primary">Připojit</button>
+ <button id="loadBtn" class="secondary" disabled>Načíst z databáze</button>
+</section>
+<section class="toolbar panel actions">
+ <label class="search">Vyhledat položku<input id="search" type="search" placeholder="Název nebo číslo reference…"></label>
+ <div class="spacer"></div><button id="exportBtn" class="primary" disabled>Exportovat do DB</button><button id="xlsxBtn" class="secondary" disabled>Stáhnout XLSX</button>
+</section>
+<section class="meta"><span id="countLabel">0 / 49 vyplněno</span><span id="statusText">Přístupový klíč zůstává v této relaci.</span></section>
+<div class="table-wrap panel"><table><thead><tr><th>Název</th><th>Průměr</th><th>Číslo ref.</th><th>Počet ks</th></tr></thead><tbody id="rows"><tr><td colspan="4" class="empty">Načítání aplikace…</td></tr></tbody></table></div>
+<footer>Data se do databáze zapisují pouze po stisknutí tlačítka <b>Exportovat do DB</b>.</footer>
+</main><div id="toast" role="status" aria-live="polite"></div>
+</body></html>
