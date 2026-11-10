@@ -11,6 +11,7 @@ const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: corsHeaders });
 
 const expectedItems = [
+  ["SUZUKI YFA",22,"6048"],
   ["VW MQB A0",22,"6076"],["PSA R8",22,"1801"],["PSA X74",22,"6115"],
   ["TOYOTA 713W",22,"6107"],["TOYOTA 714W",22,"6108"],["TOYOTA COROLA ",22,"6094"],
   ["TOYOTA YARIS",22,"1894"],["TOYOTA YARIS",22,"1895"],["TMUK/TPCE 982A",22,"6055"],
@@ -82,7 +83,7 @@ Deno.serve(async (req: Request) => {
   let body: unknown;
   try { body = await req.json(); } catch { return json({ error: "Neplatný JSON." }, 400); }
   const items = (body as Record<string, unknown> | null)?.items;
-  if (!validateItems(items)) return json({ error: "Data neodpovídají očekávané struktuře 49 položek." }, 400);
+  if (!validateItems(items)) return json({ error: "Data neodpovídají očekávané struktuře 50 položek." }, 400);
 
   const { data, error } = await supabase.from("skladova_evidence").upsert({
     id: 1, items, updated_at: new Date().toISOString()
