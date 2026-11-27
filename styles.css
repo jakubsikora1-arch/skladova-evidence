@@ -10,19 +10,20 @@
 .danger{background:#fff1ef;color:#9b2c22;border-color:#efc9c4}
 @media(max-width:620px){#syncBadge{min-width:112px;white-space:normal;max-width:125px;padding:7px 10px}}
 
-/* Compact table layout for iPhone-width screens */
+/* Full table on iPhone 16 and other narrow mobile screens */
 @media(max-width:430px){
   main{padding:0 8px}
   .table-wrap{overflow-x:hidden}
   table{width:100%;min-width:0;table-layout:fixed}
-  th,td{padding:8px 4px;font-size:12px}
-  th{font-size:10px;line-height:1.15;overflow-wrap:anywhere}
-  th:nth-child(1),td.name{width:28%}
-  th:nth-child(2),td.diameter{width:12%;text-align:center}
-  th:nth-child(3),td.ref{width:25%}
-  th:nth-child(4),tbody td:last-child{width:35%}
-  td.name{font-size:11px;line-height:1.2;overflow-wrap:anywhere;word-break:normal}
-  td.ref{font-size:11px;letter-spacing:0;overflow-wrap:anywhere;word-break:break-word}
-  td.diameter{font-size:12px}
-  td input{display:block;width:100%;min-width:0;height:36px;padding:0 4px;font-size:14px;text-align:center}
+  th,td{padding:8px 4px}
+  th{font-size:12px;line-height:1.2;white-space:normal;overflow-wrap:anywhere}
+  td{font-size:14px;line-height:1.25}
+  th:nth-child(1),td.name{width:42%}
+  th:nth-child(2),td.diameter{width:13%;text-align:center}
+  th:nth-child(3),td.ref{width:23%}
+  th:nth-child(4),tbody td:last-child{width:22%}
+  td.name{font-size:14px;overflow-wrap:anywhere;word-break:normal}
+  td.ref{font-size:13px;letter-spacing:0;overflow-wrap:anywhere;word-break:break-word}
+  td.diameter{font-size:14px}
+  td input{display:block;width:100%;min-width:0;height:36px;padding:0 2px;font-size:14px;text-align:center}
 }
