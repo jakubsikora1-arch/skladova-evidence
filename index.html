@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1f6b3a"><title>Skladová evidence</title>
-<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="./styles.css?v=20261127-1">
 <script defer src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
-<script defer src="./app.js?v=20261110-1"></script>
+<script defer src="./app.js?v=20261127-1"></script>
 </head>
 <body>
-<header class="topbar"><div class="brand-mark">SE</div><div><h1>Skladová evidence</h1><p>TISK PRO ZÁPIS · 50 položek</p></div><div class="spacer"></div><span id="syncBadge" class="badge neutral">Nový formulář</span></header>
+<header class="topbar"><div class="brand-mark">SE</div><div><h1>Skladová evidence</h1><p>TISK PRO ZÁPIS · 50 položek</p></div><div class="spacer"></div><button type="button" id="syncBadge" class="badge neutral" aria-label="Vytvořit nový formulář" title="Vytvořit nový formulář">Nový formulář</button></header>
 <main>
 <section class="toolbar panel">
  <button id="loadBtn" class="secondary">Stáhnout poslední počty</button>
@@ -20,5 +20,16 @@
 <section class="meta"><span id="countLabel">0 / 50 vyplněno</span><span id="statusText">Nový prázdný formulář. Poslední uložené počty načteš tlačítkem „Stáhnout poslední počty“.</span></section>
 <div class="table-wrap panel"><table><thead><tr><th>Název</th><th>Průměr</th><th>Číslo ref.</th><th>Počet ks</th></tr></thead><tbody id="rows"><tr><td colspan="4" class="empty">Připravuji prázdný formulář…</td></tr></tbody></table></div>
 <footer>Každé otevření začíná prázdným formulářem. Uložené počty se načtou pouze po stisknutí tlačítka <b>Stáhnout poslední počty</b>. Do databáze se zapisuje pouze po stisknutí tlačítka <b>Exportovat do DB</b>.</footer>
-</main><div id="toast" role="status" aria-live="polite"></div>
+</main><section id="newFormDialog" class="dialog-backdrop" role="dialog" aria-modal="true" aria-labelledby="newFormTitle" hidden>
+ <div class="dialog panel">
+  <h2 id="newFormTitle">Vymazat aktuální formulář?</h2>
+  <p>Všechny zadané počty budou odstraněny z formuláře. Chceš je nejdříve uložit do databáze?</p>
+  <div class="dialog-actions">
+   <button type="button" id="saveThenClear" class="primary">Uložit do DB a vymazat</button>
+   <button type="button" id="clearWithoutSave" class="danger">Vymazat bez uložení</button>
+   <button type="button" id="cancelNewForm" class="secondary">Zrušit</button>
+  </div>
+ </div>
+</section>
+<div id="toast" role="status" aria-live="polite"></div>
 </body></html>
