@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#1f6b3a"><title>Skladová evidence</title>
-<link rel="stylesheet" href="./styles.css?v=20261127-4">
+<link rel="stylesheet" href="./styles.css?v=20261127-5">
 <script defer src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
-<script defer src="./app.js?v=20261127-3"></script>
+<script defer src="./app.js?v=20261127-4"></script>
 </head>
 <body>
 <header class="topbar"><div class="brand-mark">SE</div><div><h1>Skladová evidence</h1><p>TISK PRO ZÁPIS · 50 položek</p></div><button type="button" id="themeToggle" class="theme-toggle" aria-label="Přepnout na světlý režim" title="Přepnout vzhled">
@@ -21,7 +21,7 @@
  <div class="spacer"></div><button id="exportBtn" class="primary">Exportovat do DB</button><button id="xlsxBtn" class="secondary">Stáhnout XLSX</button>
 </section>
 <section class="meta"><span id="countLabel">0 / 50 vyplněno</span><span id="statusText">Nový prázdný formulář. Poslední uložené počty načteš tlačítkem „Stáhnout poslední počty“.</span></section>
-<div class="table-wrap panel"><table><thead><tr><th>Název</th><th>Ø</th><th>Číslo ref.</th><th>Počet ks</th></tr></thead><tbody id="rows"><tr><td colspan="4" class="empty">Připravuji prázdný formulář…</td></tr></tbody></table></div>
+<div class="table-wrap panel"><table><thead><tr><th>Název</th><th aria-label="Průměr" title="Průměr">⌀</th><th>Číslo ref.</th><th>Počet ks</th></tr></thead><tbody id="rows"><tr><td colspan="4" class="empty">Připravuji prázdný formulář…</td></tr></tbody></table></div>
 <footer>Každé otevření začíná prázdným formulářem. Uložené počty se načtou pouze po stisknutí tlačítka <b>Stáhnout poslední počty</b>. Do databáze se zapisuje pouze po stisknutí tlačítka <b>Exportovat do DB</b>.</footer>
 </main><section id="newFormDialog" class="dialog-backdrop" role="dialog" aria-modal="true" aria-labelledby="newFormTitle" hidden>
  <div class="dialog panel">
